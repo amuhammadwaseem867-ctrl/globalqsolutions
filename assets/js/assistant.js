@@ -133,7 +133,7 @@
   async function greet(start) {
     const h = new Date().getHours();
     const part = h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
-    await say(`${part}! I'm Q, the Global Q Solutions assistant. 👋\n\nI can answer questions about debt review, run a private 2-minute debt check, or book a call-back with a counsellor.`, [], 500);
+    await say(`${part}! I'm Q, the Global Q Solutions assistant.\n\nI can answer questions about debt review, run a private 2-minute debt check, or book a call-back with a counsellor.`, [], 500);
     if (start === "debtcheck") return startDebtCheck();
     if (start === "callback") return startCallback();
     setChips(["Run my debt check", "What is debt review?", "What does it cost?", "Book a call-back"]);
@@ -253,7 +253,7 @@
     if (f.name === "check") {
       if (f.step < 3) {
         const n = parseAmount(text);
-        if (isNaN(n) || (n <= 0 && f.step !== 1)) return say("Sorry, I didn't catch that amount. Please type a number, like 15000.", f.step === 0 ? ["R10 000", "R20 000", "R35 000"] : []);
+        if (isNaN(n) || (n <= 0 && f.step !== 1)) return say("That amount wasn't recognised. Type a number, like 15000.", f.step === 0 ? ["R10 000", "R20 000", "R35 000"] : []);
         if (f.step === 0) {
           f.data.income = n; f.step = 1;
           return say("**2 of 4:** Roughly how much do your essential living costs come to each month? Include rent, food, transport, school fees and utilities, but not debt repayments.", [rand(n * 0.4), rand(n * 0.5), rand(n * 0.6)]);
@@ -277,13 +277,13 @@
     if (f.name === "callback") {
       if (f.step === 0) {
         const name = text.replace(/[^\p{L}\s'-]/gu, "").trim();
-        if (name.length < 2) return say("Please type your first name so the counsellor knows who to ask for.", []);
+        if (name.length < 2) return say("Type your first name so the counsellor knows who to ask for.", []);
         f.data.name = name.charAt(0).toUpperCase() + name.slice(1);
         f.step = 1;
         return say(`Thanks, ${f.data.name}. What number should we call? We'll only use it for this call-back.`, []);
       }
       if (f.step === 1) {
-        if (!window.GQ_validPhone || !window.GQ_validPhone(text)) return say("That doesn't look like a South African number. Please try again, for example 082 123 4567.", []);
+        if (!window.GQ_validPhone || !window.GQ_validPhone(text)) return say("Enter a South African number, like 082 123 4567.", []);
         f.data.phone = text.trim();
         f.step = 2;
         return say("When's the best time for us to call? (Mon–Fri, 08:30–17:00)", ["Morning", "Afternoon", "Any time"]);
@@ -293,7 +293,7 @@
         flow = null;
         const lead = window.GQ_saveLead ? window.GQ_saveLead(Object.assign({ source: "Q chat assistant" }, f.data, lastCheck ? { check: lastCheck } : {}, { transcript: history.slice(-10) })) : null;
         const ref = lead ? lead.id.toUpperCase().slice(-6) : "";
-        addCard("Call-back booked ✓", [["Name", f.data.name], ["Number", f.data.phone], ["Preferred time", f.data.time]].concat(ref ? [["Reference", ref]] : []));
+        addCard("Call-back booked", [["Name", f.data.name], ["Number", f.data.phone], ["Preferred time", f.data.time]].concat(ref ? [["Reference", ref]] : []));
         return say(`You're all set, ${f.data.name}. A counsellor will call you within one working day. Everything you share stays confidential.\n\nCan I help with anything else in the meantime?`, ["What is debt review?", "What does it cost?", "How can I improve my credit score?"]);
       }
     }
@@ -323,7 +323,7 @@
     } else if (d.debt > available * 0.8 || d.behind === "tight" || ratio > 0.4) {
       msg = "You're managing, but it's tight. A small surprise expense could tip things over. **Debt consolidation** or **debt counselling** could give you breathing room before it becomes a crisis.\n\nWould you like a counsellor to look at your options?";
     } else {
-      msg = "Good news. Your repayments look manageable right now. 👏 You might still save by consolidating high-interest accounts, and **credit monitoring** helps you stay on track.\n\nWant tips on boosting your credit score?";
+      msg = "Good news. Your repayments look manageable right now. You might still save by consolidating high-interest accounts, and **credit monitoring** helps you stay on track.\n\nWant tips on boosting your credit score?";
     }
     history.push({ role: "assistant", content: "[Debt check completed] " + msg });
     await say(msg, ["Book a call-back", "What is debt review?", "How can I improve my credit score?"]);

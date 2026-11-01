@@ -88,7 +88,7 @@ window.GQ_KB = [
   {
     id: "contact",
     keywords: ["contact", "phone", "call you", "number", "email", "address", "where are you", "location", "office", "visit", "hours", "open", "wynberg"],
-    answer: "You can reach us here:\n\n📞 021 753 7150\n✉️ info@globalqsolutions.co.za\n📍 Wynberg Centre, 123 Main Road, Wynberg, Cape Town\n🕣 Monday to Friday, 08:30–17:00\n\nOr I can book a call-back for you right now.",
+    answer: "You can reach us here:\n\nPhone: 021 753 7150\nEmail: info@globalqsolutions.co.za\nOffice: Wynberg Centre, 123 Main Road, Wynberg, Cape Town\nHours: Monday to Friday, 08:30–17:00\n\nOr I can book a call-back for you right now.",
     chips: ["Book a call-back"]
   },
   {
@@ -106,7 +106,7 @@ window.GQ_KB = [
   {
     id: "hello",
     keywords: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "molo", "sawubona", "hallo", "goeie"],
-    answer: "Hello! 👋 I'm Q. I can explain how debt review works, run a quick debt check, or book a call-back with a counsellor. What would you like to do?",
+    answer: "Hello, I'm Q. I can explain how debt review works, run a quick debt check, or book a call-back with a counsellor. What would you like to do?",
     chips: ["Run my debt check", "What is debt review?", "Book a call-back"]
   },
   {

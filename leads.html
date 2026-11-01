@@ -6,9 +6,14 @@
   <meta name="robots" content="noindex" />
   <title>Leads captured by Q | Demo dashboard</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
+    :root { --navy: var(--ink); --navy-3: var(--ink-3); --red-2: var(--debt); --tint: var(--paper); --radius: var(--r-md); --serif: var(--display); }
+    .btn--primary { background: var(--gold); color: #fff; }
+    .btn--primary:hover { background: var(--gold-hover); }
+    .btn--ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+    .eyebrow { color: var(--muted); font-weight: 600; margin: 0 0 4px; }
     body { background: var(--tint); }
     .wrap { width: min(1100px, 100% - 32px); margin: 40px auto; }
     .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -34,7 +39,7 @@
         <h1 style="font-size:2rem;margin:0">Leads captured by Q</h1>
       </div>
       <div style="display:flex;gap:10px">
-        <a class="btn btn--ghost btn--sm" href="index.html">← Back to site</a>
+        <a class="btn btn--ghost btn--sm" href="index.html">Back to the site</a>
         <button class="btn btn--primary btn--sm" id="csv">Export CSV</button>
         <button class="btn btn--ghost btn--sm" id="clear">Clear demo data</button>
       </div>
