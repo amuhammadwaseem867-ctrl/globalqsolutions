@@ -89,6 +89,10 @@ This proposal includes:
 
 ## 6. Packages
 
+**Pitch line:** "Your clients look for help at night, on their phones. Today they find a template. We'll give them a site that answers, checks if they qualify, and books the call, so you start every morning with warm leads."
+
+See `docs/Global-Q-Solutions-Website-Comparison.pdf` for the measured before-and-after comparison.
+
 All prices exclude VAT.
 
 | | **Starter** | **Growth** (recommended) | **Premium** |
@@ -102,21 +106,21 @@ All prices exclude VAT.
 | WhatsApp chatbot (same Q brain) | – | – | ✓ |
 | Monthly report (visitors, chats, leads) | – | ✓ | ✓ |
 | Hosting, SSL, backups & security updates | ✓ | ✓ | ✓ |
-| Content updates per month | 1 hour | 3 hours | 5 hours |
-| AI replies included per month | – | 3 000 | 6 000 |
-| **Once-off setup & build** | **R14 500** | **R29 500** | **R44 500** |
-| **Monthly fee** | **R650** | **R1 950** | **R3 950** |
+| Content updates per month | 1 hour | 2 hours | 4 hours |
+| AI replies included per month | – | 1 500 | 3 000 |
+| **Once-off setup & build** | **R8 500** | **R16 500** | **R26 500** |
+| **Monthly fee** | **R450** | **R1 250** | **R2 250** |
 
-Terms: 50% deposit to start, balance on launch. Monthly fees run month-to-month after a 6-month minimum. Meta's WhatsApp message fees (Premium) are billed at cost. Launch in about 2–3 weeks from deposit. Quote valid for 30 days.
+Terms: 50% deposit to start and the balance on launch, or 3 equal monthly payments. Monthly fees run month-to-month after a 6-month minimum. Meta's WhatsApp message fees (Premium) are billed at cost. Launch in about 2–3 weeks from deposit. Quote valid for 30 days.
 
 ### How these prices compare to the market (South Africa, 2026)
 
 | Item | Typical market rate | This proposal |
 |---|---|---|
 | Custom-designed small-business website | R15 000 – R30 000 custom; R5 000 – R15 000 template | Included in every package |
-| Custom AI chatbot build | R25 000 – R80 000 once-off | Growth adds it for R15 000 more than Starter |
+| Custom AI chatbot build | R25 000 – R80 000 once-off | Growth includes the site and the AI assistant for R16 500 |
 | Subscription chatbot tools | R300 – R1 200 / month, generic | Q is built around Global Q's services and debt check |
 | WhatsApp chatbot | R6 900 – R15 000 setup + R1 000 – R3 800 / month + Meta fees | Premium |
-| Hosting and maintenance | R500 – R2 500 / month | From R650 / month |
+| Hosting and maintenance | R500 – R2 500 / month | From R450 / month |
 
 Market ranges come from published 2026 South African agency and vendor price guides.
