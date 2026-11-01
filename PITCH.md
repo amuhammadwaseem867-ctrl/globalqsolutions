@@ -1,6 +1,6 @@
 # Global Q Solutions: website redesign and AI assistant proposal
 
-Prepared for Global Q Solutions, Wynberg, Cape Town
+Prepared for Global Q Solutions, Wynberg, Cape Town, by **WA Creative Solutions**
 
 ---
 
