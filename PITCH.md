@@ -106,10 +106,10 @@ All prices exclude VAT.
 | WhatsApp chatbot (same Q brain) | – | – | ✓ |
 | Monthly report (visitors, chats, leads) | – | ✓ | ✓ |
 | Hosting, SSL, backups & security updates | ✓ | ✓ | ✓ |
-| Content updates per month | 1 hour | 2 hours | 4 hours |
-| AI replies included per month | – | 1 500 | 3 000 |
-| **Once-off setup & build** | **R8 500** | **R16 500** | **R26 500** |
-| **Monthly fee** | **R450** | **R1 250** | **R2 250** |
+| Content updates per month | 1 hour | 1 hour | 2 hours |
+| AI replies included per month | – | 1 000 | 2 000 |
+| **Once-off setup & build** | **R5 500** | **R9 900** | **R16 500** |
+| **Monthly fee** | **R350** | **R850** | **R1 650** |
 
 Terms: 50% deposit to start and the balance on launch, or 3 equal monthly payments. Monthly fees run month-to-month after a 6-month minimum. Meta's WhatsApp message fees (Premium) are billed at cost. Launch in about 2–3 weeks from deposit. Quote valid for 30 days.
 
@@ -118,9 +118,9 @@ Terms: 50% deposit to start and the balance on launch, or 3 equal monthly paymen
 | Item | Typical market rate | This proposal |
 |---|---|---|
 | Custom-designed small-business website | R15 000 – R30 000 custom; R5 000 – R15 000 template | Included in every package |
-| Custom AI chatbot build | R25 000 – R80 000 once-off | Growth includes the site and the AI assistant for R16 500 |
+| Custom AI chatbot build | R25 000 – R80 000 once-off | Growth includes the site and the AI assistant for R9 900 |
 | Subscription chatbot tools | R300 – R1 200 / month, generic | Q is built around Global Q's services and debt check |
 | WhatsApp chatbot | R6 900 – R15 000 setup + R1 000 – R3 800 / month + Meta fees | Premium |
-| Hosting and maintenance | R500 – R2 500 / month | From R450 / month |
+| Hosting and maintenance | R500 – R2 500 / month | From R350 / month |
 
 Market ranges come from published 2026 South African agency and vendor price guides.
