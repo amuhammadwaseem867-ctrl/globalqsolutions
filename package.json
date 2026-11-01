@@ -1,0 +1,17 @@
+{
+  "name": "globalqsolutions-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Redesigned Global Q Solutions website with the Q chat assistant",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "preview": "python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

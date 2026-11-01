@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Leads captured by Q | Demo dashboard</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    body { background: var(--tint); }
+    .wrap { width: min(1100px, 100% - 32px); margin: 40px auto; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+    .stat small { color: var(--muted); font-weight: 600; }
+    .stat strong { display: block; font-family: var(--serif); font-size: 2rem; color: var(--navy); }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); font-size: .92rem; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--navy); color: #fff; font-weight: 600; }
+    .tag { display: inline-block; font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 99px; background: #eaf0f9; color: var(--navy-3); }
+    .tag--hot { background: #fdecef; color: var(--red-2); }
+    .empty { text-align: center; padding: 48px; color: var(--muted); }
+    .note { font-size: .85rem; color: var(--muted); margin-top: 16px; }
+    @media (max-width: 760px) { table, thead, tbody, tr, td, th { display: block; } thead { display: none; } tr { border-bottom: 1px solid var(--line); padding: 8px 0; } td { border: 0; padding: 4px 14px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <p class="eyebrow">Demo dashboard</p>
+        <h1 style="font-size:2rem;margin:0">Leads captured by Q</h1>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a class="btn btn--ghost btn--sm" href="index.html">← Back to site</a>
+        <button class="btn btn--primary btn--sm" id="csv">Export CSV</button>
+        <button class="btn btn--ghost btn--sm" id="clear">Clear demo data</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><small>Total leads</small><strong id="s-total">0</strong></div>
+      <div class="stat"><small>From the chat assistant</small><strong id="s-chat">0</strong></div>
+      <div class="stat"><small>Completed debt check</small><strong id="s-check">0</strong></div>
+      <div class="stat"><small>Likely over-indebted</small><strong id="s-hot">0</strong></div>
+    </div>
+    <table>
+      <thead><tr><th>When</th><th>Name</th><th>Phone</th><th>Source</th><th>Need / time</th><th>Debt check</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="note">In this demo, leads are stored in your browser only. In production they go straight to the team's email, CRM or WhatsApp inbox through <code>/api/lead</code>.</p>
+  </div>
+  <script>
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const R = (n) => "R" + Math.round(n).toLocaleString("en-ZA").replace(/,/g, " ");
+    const hot = (c) => c && (c.debt > c.income - c.expenses || c.behind === "yes");
+    function render() {
+      const leads = JSON.parse(localStorage.getItem("gqs_leads") || "[]");
+      document.getElementById("s-total").textContent = leads.length;
+      document.getElementById("s-chat").textContent = leads.filter((l) => /chat/i.test(l.source)).length;
+      document.getElementById("s-check").textContent = leads.filter((l) => l.check).length;
+      document.getElementById("s-hot").textContent = leads.filter((l) => hot(l.check)).length;
+      document.getElementById("rows").innerHTML = leads.length ? leads.map((l) => `
+        <tr>
+          <td>${esc(new Date(l.created).toLocaleString("en-ZA", { dateStyle: "medium", timeStyle: "short" }))}</td>
+          <td><b>${esc(l.name)}</b>${l.email ? "<br><small>" + esc(l.email) + "</small>" : ""}</td>
+          <td><a href="tel:${esc(String(l.phone).replace(/\s/g, ""))}">${esc(l.phone)}</a></td>
+          <td><span class="tag">${esc(l.source)}</span></td>
+          <td>${esc(l.topic || "—")}<br><small>${esc(l.time || "")}</small></td>
+          <td>${l.check ? `<span class="tag ${hot(l.check) ? "tag--hot" : ""}">${hot(l.check) ? "Over-indebted" : "Manageable"}</span><br><small>Income ${R(l.check.income)} · Debt ${R(l.check.debt)}</small>` : "—"}</td>
+        </tr>`).join("") : '<tr><td colspan="6" class="empty">No leads yet. Open the site, chat with Q and book a call-back to see it appear here.</td></tr>';
+    }
+    document.getElementById("clear").onclick = () => { if (confirm("Clear all demo leads?")) { localStorage.removeItem("gqs_leads"); render(); } };
+    document.getElementById("csv").onclick = () => {
+      const leads = JSON.parse(localStorage.getItem("gqs_leads") || "[]");
+      const cols = ["created", "name", "phone", "email", "source", "topic", "time"];
+      const csv = [cols.concat(["income", "expenses", "debt", "behind"]).join(",")].concat(leads.map((l) =>
+        cols.map((c) => JSON.stringify(l[c] ?? "")).concat(l.check ? [l.check.income, l.check.expenses, l.check.debt, l.check.behind] : ["", "", "", ""]).join(","))).join("\n");
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+      a.download = "gqs-leads.csv";
+      a.click();
+    };
+    render();
+  </script>
+</body>
+</html>
