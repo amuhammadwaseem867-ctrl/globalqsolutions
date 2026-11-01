@@ -40,7 +40,7 @@
   .callout { background: var(--navy); color: #dfe6f1; border-radius: 12px; padding: 16px 18px; margin: 14px 0; }
   .callout b { color: #fff; }
   table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 8px 0 12px; }
-  th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th, td { text-align: left; padding: 6px 9px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { background: var(--navy); color: #fff; font-weight: 600; }
   tr:nth-child(even) td { background: #fafbfc; }
   td.n { color: var(--red); font-weight: 700; width: 22px; }
@@ -61,14 +61,14 @@
   ul.check { list-style: none; padding: 0; margin: 6px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
   ul.check li { padding-left: 22px; position: relative; font-size: 9.5pt; }
   ul.check li::before { content: ""; position: absolute; left: 0; top: 3px; width: 13px; height: 13px; border: 2px solid var(--navy3); border-radius: 3px; }
-  .pricing td, .pricing th { text-align: center; }
+  .pricing td, .pricing th { text-align: center; padding: 5px 9px; }
   .pricing td:first-child, .pricing th:first-child { text-align: left; }
   .pricing th.rec { background: var(--red); }
   .pricing .y { color: var(--ok); font-weight: 700; }
   .pricing .x { color: #b0b7c3; }
   .pricing .fee td { background: #fff7e0 !important; font-weight: 700; }
   .note { font-size: 8.5pt; color: var(--muted); }
-  .contact { margin-top: 18px; padding: 16px 18px; border: 1.5px solid var(--navy); border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .contact { margin-top: 10px; padding: 12px 18px; border: 1.5px solid var(--navy); border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   .contact h3 { margin: 0 0 4px; }
 </style>
 </head>
@@ -192,7 +192,7 @@
 
 <section class="page">
   <p class="eyebrow">06 · Packages</p>
-  <h2>Choose your level</h2>
+  <h2 style="font-size:17pt">Choose your level</h2>
   <table class="pricing">
     <tr><th></th><th>Starter</th><th class="rec">Growth (recommended)</th><th>Premium</th></tr>
     <tr><td>New website (this design)</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
@@ -203,13 +203,27 @@
     <tr><td>CRM or WhatsApp Business integration</td><td class="x">–</td><td class="y">✓</td><td class="y">✓</td></tr>
     <tr><td>WhatsApp chatbot (same Q brain)</td><td class="x">–</td><td class="x">–</td><td class="y">✓</td></tr>
     <tr><td>Monthly report (visitors, chats, leads)</td><td class="x">–</td><td class="y">✓</td><td class="y">✓</td></tr>
-    <tr class="fee"><td>Once-off fee</td><td>R ______</td><td>R ______</td><td>R ______</td></tr>
-    <tr class="fee"><td>Monthly fee (hosting, AI usage, support)</td><td>R ______</td><td>R ______</td><td>R ______</td></tr>
+    <tr><td>Hosting, SSL, backups &amp; security updates</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+    <tr><td>Content updates per month</td><td>1 hour</td><td>3 hours</td><td>5 hours</td></tr>
+    <tr><td>AI replies included per month</td><td class="x">–</td><td>3 000</td><td>6 000</td></tr>
+    <tr class="fee"><td>Once-off setup &amp; build</td><td>R14 500</td><td>R29 500</td><td>R44 500</td></tr>
+    <tr class="fee"><td>Monthly fee</td><td>R650</td><td>R1 950</td><td>R3 950</td></tr>
   </table>
-  <p class="note">AI running costs are usage-based and small for a site of this size. Budget a few hundred rand a month and confirm it against real traffic after the first month.</p>
+  <p class="note">All prices exclude VAT. 50% deposit to start, balance on launch. Monthly fees run month-to-month after a 6-month minimum. Meta's WhatsApp message fees (Premium) are billed at cost. Quote valid for 30 days.</p>
+
+  <h3 style="margin-top:.4em">How these prices compare to the market</h3>
+  <table>
+    <tr><th>Item</th><th>Typical South African market rate (2026)</th><th>This proposal</th></tr>
+    <tr><td>Custom-designed small-business website</td><td>R15 000 – R30 000 for a custom build; R5 000 – R15 000 for template sites</td><td>Included in every package</td></tr>
+    <tr><td>Custom AI chatbot build</td><td>R25 000 – R80 000 once-off</td><td>Growth adds it for R15 000 more than Starter</td></tr>
+    <tr><td>Subscription chatbot tools</td><td>R300 – R1 200 per month, generic and not trained on the business</td><td>Q is built around Global Q's services and debt-check process</td></tr>
+    <tr><td>WhatsApp chatbot</td><td>R6 900 – R15 000 setup, plus R1 000 – R3 800 per month and Meta fees</td><td>Premium, sharing Q's brain with the website</td></tr>
+    <tr><td>Hosting and maintenance</td><td>R500 – R2 500 per month</td><td>From R650 per month</td></tr>
+  </table>
+  <p class="note">Market ranges are drawn from published 2026 South African agency and vendor price guides. Growth is the recommended package: it pays for itself if Q books one or two extra clients a month.</p>
 
   <div class="contact">
-    <div><h3>Next step</h3><p style="margin:0">A 30-minute call to confirm the details above and agree on a launch date.</p></div>
+    <div><h3>Next step</h3><p style="margin:0">A 30-minute call to confirm the details above and agree on a launch date. Launch in about 2–3 weeks from deposit.</p></div>
     <div style="text-align:right;font-size:9.5pt">Prepared by<br><b>________________________</b><br>________________________</div>
   </div>
   <div class="foot"><span>Global Q Solutions · Website &amp; AI assistant proposal</span><span>5</span></div>

@@ -87,21 +87,36 @@ This proposal includes:
 
 ---
 
-## 6. Suggested packages
+## 6. Packages
 
-Fill in your pricing:
+All prices exclude VAT.
 
 | | **Starter** | **Growth** (recommended) | **Premium** |
 |---|---|---|---|
 | New website (this design) | ✓ | ✓ | ✓ |
 | Savings calculator | ✓ | ✓ | ✓ |
-| Q assistant, offline mode (no running costs) | ✓ | ✓ | ✓ |
+| Q assistant, offline mode | ✓ | ✓ | ✓ |
 | Q assistant, AI mode (Claude) | – | ✓ | ✓ |
 | Leads emailed to the team | ✓ | ✓ | ✓ |
 | CRM or WhatsApp Business integration | – | ✓ | ✓ |
-| WhatsApp chatbot (same Q brain on WhatsApp) | – | – | ✓ |
+| WhatsApp chatbot (same Q brain) | – | – | ✓ |
 | Monthly report (visitors, chats, leads) | – | ✓ | ✓ |
-| Once-off fee | R ____ | R ____ | R ____ |
-| Monthly fee (hosting, AI usage, support) | R ____ | R ____ | R ____ |
+| Hosting, SSL, backups & security updates | ✓ | ✓ | ✓ |
+| Content updates per month | 1 hour | 3 hours | 5 hours |
+| AI replies included per month | – | 3 000 | 6 000 |
+| **Once-off setup & build** | **R14 500** | **R29 500** | **R44 500** |
+| **Monthly fee** | **R650** | **R1 950** | **R3 950** |
 
-AI running costs are usage-based and small for a site of this size. Budget a few hundred rand a month and confirm it against real traffic after the first month.
+Terms: 50% deposit to start, balance on launch. Monthly fees run month-to-month after a 6-month minimum. Meta's WhatsApp message fees (Premium) are billed at cost. Launch in about 2–3 weeks from deposit. Quote valid for 30 days.
+
+### How these prices compare to the market (South Africa, 2026)
+
+| Item | Typical market rate | This proposal |
+|---|---|---|
+| Custom-designed small-business website | R15 000 – R30 000 custom; R5 000 – R15 000 template | Included in every package |
+| Custom AI chatbot build | R25 000 – R80 000 once-off | Growth adds it for R15 000 more than Starter |
+| Subscription chatbot tools | R300 – R1 200 / month, generic | Q is built around Global Q's services and debt check |
+| WhatsApp chatbot | R6 900 – R15 000 setup + R1 000 – R3 800 / month + Meta fees | Premium |
+| Hosting and maintenance | R500 – R2 500 / month | From R650 / month |
+
+Market ranges come from published 2026 South African agency and vendor price guides.
