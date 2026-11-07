@@ -262,7 +262,7 @@ input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(3
 .about__facts dt { font-weight: 600; color: var(--ink); }
 .about__facts dd { margin: 0; color: var(--muted); }
 
-/* faq */
+/* FAQ */
 .faq { max-width: 880px; }
 .faq__list { border-top: 2px solid var(--ink); margin-top: var(--s5); }
 .faq details { border-bottom: 1px solid var(--line); }
