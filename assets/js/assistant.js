@@ -1,4 +1,4 @@
-/* Q — Global Q Solutions website assistant
+/* Q, Global Q Solutions website assistant
    - Guided flows (debt check, call-back booking) always run in the browser.
    - Free-text questions go to the AI endpoint (/api/chat) when it's deployed,
      and fall back to the offline knowledge base (knowledge.js) when it isn't. */
@@ -31,7 +31,7 @@
   let lastCheck = null; // results of the debt check, attached to leads
   const history = []; // AI conversation [{role, content}]
 
-  /* ---------- WhatsApp ---------- */
+  /* WhatsApp */
   if (CONFIG.whatsapp) {
     const wa = $("#wa-fab");
     wa.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hi Global Q Solutions, I'd like help with my debt.");
@@ -42,7 +42,7 @@
     wa.innerHTML = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>';
   }
 
-  /* ---------- UI helpers ---------- */
+  /* UI helpers */
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   function linkify(s) {
     return esc(s)
@@ -96,7 +96,7 @@
     setChips(chips);
   }
 
-  /* ---------- Open / close ---------- */
+  /* Open / close */
   function open(start) {
     chat.hidden = false;
     fab.setAttribute("aria-expanded", "true");
@@ -139,7 +139,7 @@
     setChips(["Run my debt check", "What is debt review?", "What does it cost?", "Book a call-back"]);
   }
 
-  /* ---------- Input routing ---------- */
+  /* Input routing */
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = input.value.trim();
@@ -174,7 +174,7 @@
     }
   }
 
-  /* ---------- Free-text answers ---------- */
+  /* Free-text answers */
   function score(text, entry) {
     const t = " " + text.toLowerCase().replace(/[^a-z0-9.\s-]/g, " ").replace(/\s+/g, " ") + " ";
     let s = 0;
@@ -230,7 +230,7 @@
     await say(reply, hit ? hit.chips : ["Book a call-back", "Run my debt check", "What is debt review?"]);
   }
 
-  /* ---------- Guided flows ---------- */
+  /* Guided flows */
   function parseAmount(s) {
     let t = String(s).toLowerCase().replace(/zar|rand|r|\s|,/g, "");
     let mult = 1;
@@ -329,6 +329,6 @@
     await say(msg, ["Book a call-back", "What is debt review?", "How can I improve my credit score?"]);
   }
 
-  /* ---------- Gentle nudge after 20s ---------- */
+  /* Gentle nudge after 20s */
   setTimeout(() => { if (!started) fab.classList.remove("no-ping"); }, 20000);
 })();
